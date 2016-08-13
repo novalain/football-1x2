@@ -1,0 +1,6 @@
+# OS files
+.DS_Store
+
+# Cordova stuff - records reside in config.xml
+plugins/
+platforms/
