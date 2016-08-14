@@ -1,7 +1,7 @@
 <div class="game-container v-align">
 	<div class="game-bar">
 		<div class="game-info">
-			<span>Week 32</span>
+			<span>Week {{week}}</span>
 		</div>
 		<div class="game-score">
 			<div class="flex">
@@ -11,16 +11,16 @@
 			</div>
 		</div>
 	</div>
-	<div class="game-item" ng-repeat="i in [1,2,3,4,5,6,7,8,9,10,11,12,13]">
+  <div class="game-item" ng-repeat="game in games">
 		<div class="game-info">
 			<div>
-				<span>Arsenal</span>
+				<span>{{game.homeTeam}}</span>
 				<span>-</span>
-				<span>Liverpool</span>
-				<span>3 - 4</span>
+				<span>{{game.awayTeam}}</span>
+				<span>{{game.score}}</span>
 			</div>
 			<div class="game-date">
-				<span>Today 16:00</span>
+				<span>{{game.start}}</span>
 			</div>
 		</div>
 		<div class="game-score">
