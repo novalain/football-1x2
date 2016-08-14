@@ -4,8 +4,8 @@ angular.module('liveScoreUpdaterApp', ['ui.router'])
     .state('home', {
       url: '/home',
       // TODO: add template and set up first view
-      template:'<h1>Hello main view</h1>',
-      controller: 'mainViewController'
+      templateUrl: 'views/select_game_view.html',
+      controller: 'selectGameController'
     });
   $urlRouterProvider.otherwise('home');
 });
