@@ -4,3 +4,5 @@
 # Cordova stuff - records reside in config.xml
 plugins/
 platforms/
+
+www/js/constants.js
