@@ -1,5 +1,16 @@
+html {
+    background: url(../img/grass.jpg) no-repeat center center fixed; 
+    background-size: cover;
+}
+
 body {
     margin: 0px;
+
+}
+
+html, body, .ng-scope {
+  height: 100%;
+
 }
 @font-face {
     font-family: Logo;
@@ -13,24 +24,79 @@ body {
 h3 {
     font-family: Avatar;
     color: white;
-    font-size: 45px;
+    font-size: 15px;
     letter-spacing: 3px;
 
 }
 
+span {
+    font-family: Avatar;
+    font-size: 11px;
+}
+
 .avatar {
-    box-shadow: 0px 0px 5px 10px #fff;
+    box-shadow: 0px 0px 5px 3px #fff;
     border-radius: 300px;
-    height: 240px;
-    width: 240px;
+    height: 110px;
+    width: 110px;
 
 }
 
-.content {
-    width: 100%;
-    height: 100%;
-    background: url(../img/grass.jpg) no-repeat center center fixed; 
-    background-size: cover;
+.flex {
+    display: flex;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.game-bar {
+    height: 25px;
+    display: flex;
+}
+
+.game-container {
+    min-width: 90%;
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.game-info {
+    flex: 2;
+    padding-left: 5px;
+    float: left;
+    height: inherit;
+}
+
+.game-item {
+    height: 40px;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-bottom: solid 1px rgba(197, 197, 197, 0.8);
+}
+
+.game-score {
+    flex: 1;
+    padding-right: 5px;
+    text-align: right;
+    height: inherit;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.4);
+
+}
+
+.game-date span {
+    font-size: 9px;
+}
+
+.game-bar > .game-score {
+    background-color: rgba(134, 134, 134, 0.9);
+}
+.game-bar > .game-info span {
+    font-size: 20px;
+    color: white;
 }
 
 .item-container {
@@ -50,16 +116,21 @@ h3 {
 }
 
 .logo {
+    margin: 0;
     font-family: Logo;
     color:white;
-    font-size: 400px;
+    font-size: 250px;
     text-shadow: -5px -1px 0 #000, 
                  5px -1px 0 #000, 
                  0px -5px 0 #000, 
                  0px 5px 0 #000;
 }
 
-
+.v-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
 
 
