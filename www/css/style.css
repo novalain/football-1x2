@@ -133,4 +133,35 @@ span {
 }
 
 
+input[type=checkbox] {
+    display:none; 
+}
+.checkbox:before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    vertical-align:middle;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8); 
+    border-radius: 3px;
+}
+input[type=checkbox]:checked + .checkbox:before {
+    content: "";
+    font-size: 11px;
+    line-height: 20px;
+}
 
+input[type=checkbox]:checked + .checkbox-1:before {
+    content: "1";
+}
+
+input[type=checkbox]:checked + .checkbox-X:before {
+    content: "X";
+}
+
+input[type=checkbox]:checked + .checkbox-2:before {
+    content: "2";
+}
