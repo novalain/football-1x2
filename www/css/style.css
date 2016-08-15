@@ -202,8 +202,28 @@ input[type=checkbox]:checked + .checkbox-2:before {
     content: "2";
 }
 
+.win.checkbox-1:before {
+    background-color: green !important;
+}
+
+.win.checkbox-X:before {
+    background-color: green !important;
+}
+
 .win.checkbox-2:before {
     background-color: green !important;
+}
+
+.fail.checkbox-1:before {
+    background-color: red !important;
+}
+
+.fail.checkbox-X:before {
+    background-color: red !important;
+}
+
+.fail.checkbox-2:before {
+    background-color: red !important;
 }
 
 .fade-in {

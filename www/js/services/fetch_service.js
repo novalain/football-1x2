@@ -14,6 +14,7 @@ angular.module('liveScoreUpdaterApp')
       data.awayTeam = match.AwayTeam;
       data.score = match.Score;
       data.start = match.MatchStart;
+      data.sign = match.Sign;
       data.isFinished = match.IsFinished;
       result.games.push(data);
     })
