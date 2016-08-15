@@ -173,57 +173,53 @@ input[type=checkbox] {
 }
 
 input[type=checkbox] + .checkbox-1:before {
-    content: "1";
+    content: "";
 }
 
 input[type=checkbox] + .checkbox-X:before {
-    content: "X";
+    content: "";
 }
 
 input[type=checkbox] + .checkbox-2:before {
-    content: "2";
+    content: "";
 }
 
+
+
 input[type=checkbox]:checked + .checkbox-1:before {
-    background-color: #526ef7;
-    color: white;
     content: "1";
 }
 
 input[type=checkbox]:checked + .checkbox-X:before {
-    background-color: #526ef7;
-    color: white;
     content: "X";
 }
 
 input[type=checkbox]:checked + .checkbox-2:before {
-    background-color: #526ef7;
-    color: white;
     content: "2";
 }
 
 .win.checkbox-1:before {
-    background-color: green !important;
+    background-color: #8aea78  !important;
 }
 
 .win.checkbox-X:before {
-    background-color: green !important;
+    background-color: #8aea78  !important;
 }
 
 .win.checkbox-2:before {
-    background-color: green !important;
+    background-color: #8aea78  !important;
 }
 
 .fail.checkbox-1:before {
-    background-color: red !important;
+    background-color: #ea7878  !important;
 }
 
 .fail.checkbox-X:before {
-    background-color: red !important;
+    background-color: #ea7878   !important;
 }
 
 .fail.checkbox-2:before {
-    background-color: red !important;
+    background-color: #ea7878   !important;
 }
 
 .fade-in {
