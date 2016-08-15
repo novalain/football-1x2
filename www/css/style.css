@@ -21,6 +21,13 @@ html, body, .ng-scope {
     src: url("../fonts/BoostLightSSK-Regular.ttf");
 }
 
+h2 {
+    font-family: Avatar;
+    font-size: 30px;
+    margin: 0;
+    color: white;
+}
+
 h3 {
     font-family: Avatar;
     color: white;
@@ -30,9 +37,12 @@ h3 {
 }
 
 span {
-    font-family: Avatar;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
     font-size: 11px;
 }
+
+
 
 .avatar {
     box-shadow: 0px 0px 5px 3px #fff;
@@ -50,9 +60,30 @@ span {
     flex: 1;
 }
 
+.float-left{
+    float: left;
+}
+
 .game-bar {
-    height: 25px;
+    height: 40px;
     display: flex;
+}
+
+.game-bar > .game-bet {
+    background-color: rgba(134, 134, 134, 0.9);
+}
+.game-bar > .game-info span {
+    font-size: 20px;
+    color: white;
+}
+
+.game-bet {
+    flex: 1;
+    padding-right: 5px;
+    text-align: right;
+    height: inherit;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 .game-container {
@@ -61,6 +92,11 @@ span {
     height: 90%;
     margin: 0 auto;
     margin-bottom: 30px;
+}
+
+.game-date span {
+    font-size: 9px;
+    font-weight: 500;
 }
 
 .game-info {
@@ -78,25 +114,8 @@ span {
 }
 
 .game-score {
-    flex: 1;
-    padding-right: 5px;
-    text-align: right;
-    height: inherit;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.4);
-
-}
-
-.game-date span {
-    font-size: 9px;
-}
-
-.game-bar > .game-score {
-    background-color: rgba(134, 134, 134, 0.9);
-}
-.game-bar > .game-info span {
-    font-size: 20px;
-    color: white;
+    float: right;
+    padding-right: 20px;
 }
 
 .item-container {
@@ -144,24 +163,81 @@ input[type=checkbox] {
     vertical-align:middle;
     background-color: #fff;
     color: #000;
+    cursor: pointer;
     text-align: center;
+    font-size: 11px;
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 20px;
     box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8); 
     border-radius: 3px;
 }
-input[type=checkbox]:checked + .checkbox:before {
-    content: "";
-    font-size: 11px;
-    line-height: 20px;
+
+input[type=checkbox] + .checkbox-1:before {
+    content: "1";
+}
+
+input[type=checkbox] + .checkbox-X:before {
+    content: "X";
+}
+
+input[type=checkbox] + .checkbox-2:before {
+    content: "2";
 }
 
 input[type=checkbox]:checked + .checkbox-1:before {
+    background-color: #526ef7;
+    color: white;
     content: "1";
 }
 
 input[type=checkbox]:checked + .checkbox-X:before {
+    background-color: #526ef7;
+    color: white;
     content: "X";
 }
 
 input[type=checkbox]:checked + .checkbox-2:before {
+    background-color: #526ef7;
+    color: white;
     content: "2";
+}
+
+.fade-in {
+  animation: fadeIn 0.7s forwards;
+}
+
+.ease-in {
+    animation: easein 0.7s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    left:600px;
+  }
+  100% {
+    opacity: 1;
+    left: 0px;
+  }
+}
+
+
+@keyframes easein {
+  0% {
+      -webkit-transform: translateY(150%);
+              transform: translateY(150%);
+      -webkit-transition-timing-function: ease-in;
+              transition-timing-function: ease-in;
+      -webkit-transition: 0.2s;
+      transition: 0.2s;
+  }
+  100% {
+      -webkit-transition: 0.25s;
+      transition: 0.25s;
+      -webkit-transition-timing-function: ease-out;
+              transition-timing-function: ease-out;
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 1;
+  }
 }

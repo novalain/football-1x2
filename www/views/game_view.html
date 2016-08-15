@@ -1,29 +1,24 @@
-<div class="game-container v-align">
+<div class="game-container v-align fade-in">
 	<div class="game-bar">
 		<div class="game-info">
-			<span>Week {{week}}</span>
-		</div>
-		<div class="game-score">
-			<div class="flex">
-				<div class="flex-1"><span>1</span></div>
-				<div class="flex-1"><span>X</span></div>
-				<div class="flex-1"><span>2</span></div>
-			</div>
+			<h2>Week {{week}}</h2>
 		</div>
 	</div>
   <div class="game-item" ng-repeat="game in games">
 		<div class="game-info">
-			<div>
+			<div class="float-left v-align">
 				<span>{{game.homeTeam}}</span>
 				<span>-</span>
 				<span>{{game.awayTeam}}</span>
+				<div class="game-date">
+					<span>{{game.start}}</span>
+				</div>
+			</div>
+			<div class="game-score v-align">
 				<span>{{game.score}}</span>
-			</div>
-			<div class="game-date">
-				<span>{{game.start}}</span>
-			</div>
+			</div>	
 		</div>
-		<div class="game-score">
+		<div class="game-bet">
 			<div class="v-align flex">
 				<div class="flex-1">
 					<input id="{{$index}}-1" type="checkbox">
