@@ -227,7 +227,7 @@ input[type=checkbox]:checked + .checkbox-2:before {
 }
 
 .ease-in {
-    animation: easein 0.7s forwards;
+    animation: easein 1s forwards;
 }
 
 @keyframes fadeIn {
@@ -244,12 +244,13 @@ input[type=checkbox]:checked + .checkbox-2:before {
 
 @keyframes easein {
   0% {
-      -webkit-transform: translateY(150%);
-              transform: translateY(150%);
-      -webkit-transition-timing-function: ease-in;
-              transition-timing-function: ease-in;
-      -webkit-transition: 0.2s;
-      transition: 0.2s;
+        opacity: 0;
+        -webkit-transform: translateY(20%);
+        transform: translateY(20%);
+        -webkit-transition-timing-function: ease-in;
+        transition-timing-function: ease-in;
+        -webkit-transition: 0.2s;
+        transition: 0.2s;
   }
   100% {
       -webkit-transition: 0.25s;
