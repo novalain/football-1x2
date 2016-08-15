@@ -1,6 +1,6 @@
 Date.prototype.getWeekNumber = function(){
-    var d = new Date(+this);
-    d.setHours(0,0,0);
-    d.setDate(d.getDate()+4-(d.getDay()||7));
-    return Math.ceil((((d-new Date(d.getFullYear(),0,1))/8.64e7)+1)/7);
+    const date = new Date(+this);
+    date.setHours(0,0,0);
+    date.setDate(date.getDate()+4-(date.getDay()||7));
+    return Math.ceil((((date-new Date(date.getFullYear(),0,1))/8.64e7)+1)/7);
 };

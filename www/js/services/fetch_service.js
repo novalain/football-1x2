@@ -2,8 +2,30 @@
 
 angular.module('liveScoreUpdaterApp')
 .service('fetchService', function() {
+  function formatMatchStart_(dateString) {
+    const matchDate = new Date(dateString);
+    const currentDate = new Date();
+    let result = "";
+    if (matchDate.getDay() === currentDate.getDay()) {
+      result = "Today";
+    } else if (matchDate.getDay() - currentDate.getDate() === 1) {
+      result = "Tomorrow";
+    } else {
+      let month = matchDate.getMonth();
+      month = month < 10 ? "0" + month : month;
+      let day = matchDate.getDay();
+      day = day < 10 ? "0" + day : day;
+      let hours = matchDate.getHours();
+      hours = hours < 10 ? "0" + hours : hours;
+      let minutes = matchDate.getMinutes();
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      result = month + "-" + day + " " + hours + ":" + minutes;
+    }
+    return result;
+  }
 
   function parseGameData_(data) {
+    console.log("data",data);
     const stopDate = data.RoundInfo.StopDate;
     let result = {stopDate};
     result.games = [];
@@ -13,7 +35,8 @@ angular.module('liveScoreUpdaterApp')
       data.homeTeam = match.HomeTeam;
       data.awayTeam = match.AwayTeam;
       data.score = match.Score;
-      data.start = match.MatchStart;
+      data.start = formatMatchStart_(match.MatchStart);
+      data.sign = match.Sign;
       data.isFinished = match.IsFinished;
       result.games.push(data);
     })
