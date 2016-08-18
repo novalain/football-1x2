@@ -1,3 +1,9 @@
+<div class="nav-bar">
+	<div class="v-align">
+		<a href="#" class="float-left"><span>Back</span></a>
+		<span>Stryktipset</span>
+	</div>
+</div>
 <div class="game-container v-align fade-in">
 	<div class="game-bar">
 		<div class="game-info">
@@ -11,12 +17,11 @@
 				<span>-</span>
 				<span>{{game.awayTeam}}</span>
 				<div class="game-date">
-					<span>{{game.start}}</span>
+					<span class="score">{{game.score}}</span>
+					<span ng-if="!game.isFinished">{{game.start}}</span>
+					<span ng-if="game.isFinished">Finished</span>
 				</div>
 			</div>
-			<div class="game-score v-align">
-				<span>{{game.score}}</span>
-			</div>	
 		</div>
 		<div class="game-bet">
 			<div class="v-align flex">
