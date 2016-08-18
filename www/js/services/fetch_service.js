@@ -38,6 +38,7 @@ angular.module('liveScoreUpdaterApp')
       data.start = formatMatchStart_(match.MatchStart);
       data.sign = match.Sign;
       data.isFinished = match.IsFinished;
+      data.date = match.MatchStart;
       result.games.push(data);
     })
     return result;
