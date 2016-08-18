@@ -11,9 +11,9 @@ angular.module('liveScoreUpdaterApp')
     } else if (matchDate.getDay() - currentDate.getDate() === 1) {
       result = "Tomorrow";
     } else {
-      let month = matchDate.getMonth();
+      let month = matchDate.getMonth() + 1;
       month = month < 10 ? "0" + month : month;
-      let day = matchDate.getDay();
+      let day = matchDate.getDate();
       day = day < 10 ? "0" + day : day;
       let hours = matchDate.getHours();
       hours = hours < 10 ? "0" + hours : hours;
