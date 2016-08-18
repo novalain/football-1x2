@@ -1,3 +1,9 @@
+<div class="nav-bar">
+	<div class="v-align">
+		<a href="#" class="float-left"><span>Back</span></a>
+		<span>Stryktipset</span>
+	</div>
+</div>
 <div class="game-container v-align fade-in">
 	<div class="game-bar">
 		<div class="game-info">
@@ -6,41 +12,43 @@
 	</div>
   <div class="game-item" ng-repeat="game in games">
 		<div class="game-info">
+			<div class="game-nr float-left">
+				<span>{{$index + 1}}</span>
+			</div>
 			<div class="float-left v-align">
-				<span>{{game.homeTeam}}</span>
+				<span>{{game.homeTeam }}</span>
 				<span>-</span>
 				<span>{{game.awayTeam}}</span>
 				<div class="game-date">
-					<span>{{game.start}}</span>
+					<span class="score">{{game.score}}</span>
+					<span ng-if="!game.isFinished">{{game.start}}</span>
+					<span ng-if="game.isFinished">Finished</span>
 				</div>
 			</div>
-			<div class="game-score v-align">
-				<span>{{game.score}}</span>
-			</div>	
 		</div>
 		<div class="game-bet">
 			<div class="v-align flex">
 				<div class="flex-1">
 					<input ng-model="checkbox.value1" id="{{$index}}-1" type="checkbox">
 					<label ng-class="{
-                              win  : (game.sign === '1' && checkbox.value1),
-                              fail : (game.sign === '1' && !checkbox.value1)
+                              win  : (game.sign === '1' && checkbox.value1 && game.hasStarted),
+                              fail : (game.sign === '1' && !checkbox.value1 && game.hasStarted)
                             }" 
             class="checkbox checkbox-1" for="{{$index}}-1"></label>
 				</div>
 				<div class="flex-1">
 					<input ng-model="checkbox.valueX" id="{{$index}}-X" type="checkbox">
 					<label ng-class="{
-                              win  : (game.sign === 'X' && checkbox.valueX),
-                              fail : (game.sign === 'X' && !checkbox.valueX)
+                              win  : (game.sign === 'X' && checkbox.valueX && game.hasStarted),
+                              fail : (game.sign === 'X' && !checkbox.valueX && game.hasStarted)
                             }" 
             class="checkbox checkbox-X" for="{{$index}}-X"></label>
 				</div>
 				<div class="flex-1">
 					<input ng-model="checkbox.value2" id="{{$index}}-2" type="checkbox">
 					<label ng-class="{
-                              win  : (game.sign === '2' && checkbox.value2),
-                              fail : (game.sign === '2' && !checkbox.value2)
+                              win  : (game.sign === '2' && checkbox.value2 && game.hasStarted),
+                              fail : (game.sign === '2' && !checkbox.value2 && game.hasStarted)
                             }"  
             class="checkbox checkbox-2" for="{{$index}}-2"></label>
 				</div>

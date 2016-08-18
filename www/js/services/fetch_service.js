@@ -19,7 +19,7 @@ angular.module('liveScoreUpdaterApp')
       hours = hours < 10 ? "0" + hours : hours;
       let minutes = matchDate.getMinutes();
       minutes = minutes < 10 ? "0" + minutes : minutes;
-      result = month + "-" + day + " " + hours + ":" + minutes;
+      result = month + "/" + day + " " + hours + ":" + minutes;
     }
     return result;
   }
@@ -38,6 +38,7 @@ angular.module('liveScoreUpdaterApp')
       data.start = formatMatchStart_(match.MatchStart);
       data.sign = match.Sign;
       data.isFinished = match.IsFinished;
+      data.date = match.MatchStart;
       result.games.push(data);
     })
     return result;
