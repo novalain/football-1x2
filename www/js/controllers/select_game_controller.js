@@ -4,8 +4,6 @@ angular.module('liveScoreUpdaterApp')
   $scope.changeState = state => {
     $state.go(state);
   }
-
-
   $scope.weekNumber = () => {
     const date = new Date();
     return date.getCurrentWeek();
