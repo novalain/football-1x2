@@ -23,6 +23,12 @@ html, body, .ng-scope {
     src: url("../fonts/BoostLightSSK-Regular.ttf");
 }
 
+@font-face {
+    font-family: OpenSans;
+    src: url("../fonts/OpenSans-ExtraBold.ttf");
+}
+
+
 h2 {
     font-family: Avatar;
     font-size: 30px;
@@ -38,6 +44,13 @@ h3 {
 
 }
 
+h4 {
+    font-family: OpenSans;
+    color: white;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
 span {
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 800;
@@ -46,6 +59,11 @@ span {
 
 .avatar {
     height: 100px;
+}
+
+.button {
+    border-radius: 20px;
+
 }
 
 .europatipset {
@@ -94,7 +112,6 @@ span {
     min-width: 90%;
     width: 90%;
     height: 90%;
-    padding-top: 40px;
     margin: 0 auto;
     margin-bottom: 30px;
 }
@@ -190,16 +207,6 @@ span {
     background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e4e4e4), color-stop(100%, #ffffff)); background-image: -webkit-linear-gradient(#e4e4e4,#ffffff);
 }
 
-.nav-bar {
-    color: white;
-    text-align: center;
-    height: 40px;
-    position: fixed;
-    z-index: 999;
-    width: 100%;
-    background: -webkit-linear-gradient(top, rgb(97, 97, 97) 0%,rgb(0, 0, 0) 100%);
-}
-
 .score {
     background: black;
     padding: 1px 4px;
@@ -208,6 +215,10 @@ span {
 
 .stryktipset {
     background: #00416e;
+}
+
+.topptipset {
+    background:  rgb(242, 148, 0);
 }
 
 .v-align {
@@ -398,4 +409,58 @@ input[type=checkbox]:checked + .checkbox-2:before {
 }
 
 /*/////////////--------------DETAILVIEW-BUTTON -----------------------*/
+
+.button {
+    margin: 25px 0px 25px 15px;
+    width: 50px;
+    display: inline-block;
+    position: relative;
+    color: #060606;
+    text-shadow: 0 1px 0 rgba(255,255,255, 0.8);
+    text-decoration: none;
+    text-align: center;
+    padding: 8px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: 'Source Sans Pro', sans-serif;
+    border-radius: 4px;
+    border: 1px solid #bcbcbc;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    background-image: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(239,239,239,1) 60%,rgba(225,223,226,1) 100%);
+
+}
+
+/* Back Button */
+.button.back {
+    border-left: none;
+}
+
+.button.back:after {
+    content: '';
+    position: absolute;
+    height: 50%;
+    width: 15px;
+    border-left: 1px solid #bcbcbc;
+    background-image: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 1%,rgba(240,240,240,1) 100%);
+    left: -5px;
+    top: 1px;
+    -webkit-transform: skew(-35deg, 0);
+    -moz-transform: skew(-35deg, 0);
+    -o-transform: skew(-35deg, 0);
+    -ms-transform: skew(-35deg, 0);
+    transform: skew(-35deg, 0);
+}
+
+.button.back:before {
+    content: '';
+    position: absolute;
+    height: 48%;
+    width: 15px;
+    border-left: 1px solid #bcbcbc;
+    bottom: 1px;
+    left: -5px;
+    transform: skew(35deg, 0);
+    background-image: -webkit-linear-gradient(top, rgba(240,240,240,1) 0%,rgba(239,239,239,1) 10%,rgba(225,223,226,1) 100%);
+    box-shadow: -2px 1px 2px rgba(100,100,100,0.1);
+}
 
