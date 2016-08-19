@@ -47,12 +47,18 @@ angular.module('liveScoreUpdaterApp')
   // TODO: implement for europatips and so on
   function fetchGame(gameUrl) {
     switch(gameUrl) {
-      case 'stryktipset':
+      case 'stryk':
         return fetch(URL_STRYKTIPSET)
                   .then(result => result.json())
                   .then(data => parseGameData_(data))  
 
-      break;
+        break;
+      case 'europa':
+        return fetch(URL_EUROPATIPSET)
+                  .then(result => result.json())
+                  .then(data => parseGameData_(data))  
+        break;
+      default: console.warn('Wrong API call');
     }
   }
 
