@@ -59,6 +59,11 @@ angular.module('liveScoreUpdaterApp')
                   .then(result => result.json())
                   .then(data => parseGameData_(data))  
         break;
+      case 'topp':
+        return fetch(URL_TOPPTIPSET)
+                  .then(result => result.json())
+                  .then(data => parseGameData_(data))  
+        break;
       default: console.warn('Wrong API call');
     }
   }
