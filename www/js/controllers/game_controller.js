@@ -1,8 +1,9 @@
 'use strict';
 angular.module('liveScoreUpdaterApp')
-.controller('gameController', function($scope, fetchService, $timeout) {
+.controller('gameController', function($scope, fetchService, 
+                                       $timeout, $stateParams) {
 	$scope.detailedView = true;
-  fetchService.fetchGame('stryktipset').then(data => {
+  fetchService.fetchGame($stateParams.whichGame).then(data => {
     $scope.games = data.games;
     watchGameStarted();
     $scope.$apply();
@@ -25,5 +26,4 @@ angular.module('liveScoreUpdaterApp')
   		watchGameStarted();
   	},5000)
   }
-
 });

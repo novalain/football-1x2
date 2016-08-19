@@ -7,7 +7,7 @@ angular.module('liveScoreUpdaterApp', ['ui.router'])
       controller: 'selectGameController'
     })
     .state('gameState', {
-      url: '/game',
+      url: '/game:whichGame',
       templateUrl: 'views/game_view.html',
       controller: 'gameController'
     });
