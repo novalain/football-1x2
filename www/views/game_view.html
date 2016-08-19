@@ -7,7 +7,12 @@
 <div class="game-container v-align fade-in">
 	<div class="game-bar">
 		<div class="game-info">
-			<h2>Week {{week}}</h2>
+			<h2 class="float-left">Week {{week}}</h2>
+			<div class="toggle float-right v-align">
+		    <a class="navicon-button" ng-click="toggleViewChange()" ng-class="{open:!detailedView}">
+		      <div class="navicon"></div>
+		    </a>
+			</div>
 		</div>
 	</div>
   <div class="game-item" ng-repeat="game in games">
