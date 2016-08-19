@@ -30,8 +30,9 @@ angular.module('liveScoreUpdaterApp')
     let result = {stopDate};
     result.games = [];
 
-    data.RoundInfo.Matches.forEach(match => {
+    data.RoundInfo.Matches.forEach( (match, index) => {
       let data = {};
+      data.id = index;
       data.homeTeam = match.HomeTeam;
       data.awayTeam = match.AwayTeam;
       data.score = match.Score;
