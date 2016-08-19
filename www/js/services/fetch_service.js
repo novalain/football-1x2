@@ -25,13 +25,14 @@ angular.module('liveScoreUpdaterApp')
   }
 
   function parseGameData_(data) {
-    console.log("data",data);
-    const stopDate = data.RoundInfo.StopDate;
+    console.log("raw data", data);
+    const stopDate = new Date(data.RoundInfo.StopDate).getTime();
     let result = {stopDate};
     result.games = [];
 
-    data.RoundInfo.Matches.forEach(match => {
+    data.RoundInfo.Matches.forEach( (match, index) => {
       let data = {};
+      data.id = index;
       data.homeTeam = match.HomeTeam;
       data.awayTeam = match.AwayTeam;
       data.score = match.Score;

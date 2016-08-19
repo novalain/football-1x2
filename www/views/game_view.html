@@ -15,47 +15,49 @@
 			</div>
 		</div>
 	</div>
-  <div class="game-item" ng-repeat="game in games">
-		<div class="game-info">
-			<div class="game-nr float-left">
-				<span>{{$index + 1}}</span>
-			</div>
-			<div class="float-left v-align">
-				<span>{{game.homeTeam }}</span>
-				<span>-</span>
-				<span>{{game.awayTeam}}</span>
-				<div class="game-date">
-					<span class="score">{{game.score}}</span>
-					<span ng-if="!game.isFinished">{{game.start}}</span>
-					<span ng-if="game.isFinished">Finished</span>
-				</div>
-			</div>
-		</div>
-		<div class="game-bet">
-			<div class="v-align flex">
-				<div class="flex-1">
-					<input ng-model="checkbox.value1" id="{{$index}}-1" type="checkbox">
-					<label ng-class="{
-                              win  : (game.sign === '1' && checkbox.value1 && game.hasStarted),
-                              fail : (game.sign === '1' && !checkbox.value1 && game.hasStarted)
+  <div class="game-item" ng-repeat="game in data.games">
+    <div class="game-info">
+      <div class="game-nr float-left">
+        <span>{{$index + 1}}</span>
+      </div>
+      <div class="float-left v-align">
+        <span>{{game.homeTeam}}</span>
+        <span>-</span>
+        <span>{{game.awayTeam}}</span>
+        <div class="game-date">
+          <span class="score">{{game.score}}</span>
+          <span ng-if="!game.isFinished">{{game.start}}</span>
+          <span ng-if="game.isFinished">Finished</span>
+        </div>
+      </div>
+    </div>
+    <div class="game-bet">
+      <div class="v-align flex">
+        <div class="flex-1">
+          
+          <input ng-click="save()" ng-model="game.userToggle1" id="{{game.id}}-1" 
+          type="checkbox" >
+					<label ng-class=" {
+                              win  : (game.sign === '1' && game.userToggle1 && game.hasStarted),
+                              fail : (game.sign === '1' && !game.userToggle1 && game.hasStarted)
                             }" 
-            class="checkbox checkbox-1" for="{{$index}}-1"></label>
+            class="checkbox checkbox-1" for="{{game.id}}-1"></label>
 				</div>
 				<div class="flex-1">
-					<input ng-model="checkbox.valueX" id="{{$index}}-X" type="checkbox">
+					<input ng-click="save()" ng-model="game.userToggleX" id="{{game.id}}-X" type="checkbox">
 					<label ng-class="{
-                              win  : (game.sign === 'X' && checkbox.valueX && game.hasStarted),
-                              fail : (game.sign === 'X' && !checkbox.valueX && game.hasStarted)
+                              win  : (game.sign === 'X' && game.userToggleX && game.hasStarted),
+                              fail : (game.sign === 'X' && game.userToggleX && game.hasStarted)
                             }" 
-            class="checkbox checkbox-X" for="{{$index}}-X"></label>
+            class="checkbox checkbox-X" for="{{game.id}}-X"></label>
 				</div>
 				<div class="flex-1">
-					<input ng-model="checkbox.value2" id="{{$index}}-2" type="checkbox">
+					<input ng-click="save()" ng-model="game.userToggle2" id="{{game.id}}-2" type="checkbox">
 					<label ng-class="{
-                              win  : (game.sign === '2' && checkbox.value2 && game.hasStarted),
-                              fail : (game.sign === '2' && !checkbox.value2 && game.hasStarted)
+                              win  : (game.sign === '2' && game.userToggle2 && game.hasStarted),
+                              fail : (game.sign === '2' && game.userToggle2 && game.hasStarted)
                             }"  
-            class="checkbox checkbox-2" for="{{$index}}-2"></label>
+            class="checkbox checkbox-2" for="{{game.id}}-2"></label>
 				</div>
 			</div>
 		</div>
