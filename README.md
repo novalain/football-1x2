@@ -1,4 +1,4 @@
-# live-score-updater
+# football-1x2
 
 This is a live score updater for Android and iOS devices. The purpose is to keep track of the current weeks "Stryktipset", "Europatipset" and "Topptipset" which are different games available on the Swedish betting site Svenska Spel. 
 
